@@ -1,0 +1,23 @@
+{% include head.html %}
+  <div class="col-md-8 my-2">
+    {{ content }}
+    {% if page.comments %}
+    <hr>
+	<div id="disqus_thread"></div>
+	<script>
+	var disqus_config = function () {
+	this.page.url = "https://drx.tn{{ page.url }}";
+    this.page.identifier = "{{ page.permalink }}";
+	};
+	(function() {
+	var d = document, s = d.createElement('script');
+	s.src = 'https://drx-tn.disqus.com/embed.js';
+	s.setAttribute('data-timestamp', +new Date());
+	(d.head || d.body).appendChild(s);
+	})();
+	</script>
+	<noscript>Veuillez activer le javascript sur votre navigateur pour visualiser <a href="https://disqus.com/?ref_noscript">les commentaires sur Disqus.</a></noscript>
+	{% endif %}
+  </div>
+{% include side.html %}
+{% include foot.html %}

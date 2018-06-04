@@ -1,0 +1,31 @@
+{% include head.html %}
+  <div class="col-md-8 my-2">
+    <h1 class="mt-4">{{ page.title }}</h1>
+    <hr>
+    <p>Article posté le {{ page.date | date: "%d %B %Y" | replace:"January","Janvier" | replace:"February","Fevrier" | replace:"March","Mars" | replace:"April","Avril" | replace:"May","Mai" | replace:"June","Juin" | replace:"July","Juillet" | replace:"August","Août"| replace:"September","Septembre" | replace:"October","Octobre" | replace:"November","Novembre" | replace:"December","Decembre" }}</p>
+    <hr>
+    {% if page.img %}
+    <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
+    <hr>
+    {% endif %}
+    {{ content }}
+    <hr>
+    {% if page.comments %}
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_config = function () {
+    this.page.url = "https://drx.tn{{ page.url }}";
+    this.page.identifier = "{{ page.id }}";
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://drx-tn.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Veuillez activer le javascript sur votre navigateur pour visualiser <a href="https://disqus.com/?ref_noscript">les commentaires sur Disqus.</a></noscript>
+    {% endif %}
+  </div>
+{% include side.html %}
+{% include foot.html %}

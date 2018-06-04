@@ -1,0 +1,57 @@
+---
+layout: default
+title: Accueil
+---
+
+{% for post in site.posts %}
+  <div class="card mb-4">
+    <div class="card-header text-muted">{{ post.date | date: "%d %B %Y" | replace:"January","Janvier" | replace:"February","Fevrier" | replace:"March","Mars" | replace:"April","Avril" | replace:"May","Mai" | replace:"June","Juin" | replace:"July","Juillet" | replace:"August","Août"| replace:"September","Septembre" | replace:"October","Octobre" | replace:"November","Novembre" | replace:"December","Decembre" }}</div>
+    <div class="card-body">
+      {% if post.img %} <img class="card-img-top" src="{{ post.img }}" alt="Card image cap"> {% endif %}
+      <h2 class="card-title">{{ post.title }}</h2>
+      <p class="card-text">{{ post.excerpt }}</p>
+      <a href="{{ post.url }}" class="btn btn-primary float-right">Continuer la lecture &raquo;</a>
+    </div>
+  </div>
+{% endfor %}
+
+
+{% if paginator.total_pages > 1 %}
+<ul class="pagination justify-content-center mb-4">
+  {% if paginator.previous_page %}
+  <li class="page-item">
+    <a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo;</a>
+  </li>
+  {% else %}
+  <li class="page-item disabled">
+    <a href="#" class="page-link">&laquo;</a>
+  </li>
+  {% endif %}
+
+  {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+    <li class="page-item active">
+      <a class="page-link" href="#top">{{ page }}</a>
+    </li>
+    {% elsif page == 1 %}
+    <li class="page-item">
+      <a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+    </li>
+    {% else %}
+    <li class="page-item">
+      <a class="page-link" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+    </li>
+    {% endif %}
+  {% endfor %}
+
+  {% if paginator.next_page %}
+  <li class="page-item">
+    <a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&raquo;</a>
+  </li>
+  {% else %}
+  <li class="page-item disabled">
+    <a class="page-link" href="#">&raquo;</a>
+  </li>
+  {% endif %}
+</ul>
+{% endif %}

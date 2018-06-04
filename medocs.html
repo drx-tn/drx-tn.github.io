@@ -1,0 +1,58 @@
+---
+layout: default
+title: "Médocs"
+description: "Application base de données des médicaments en Tunisie"
+permalink: /medocs
+medocs_version: "0.1.1"
+font_awesome: true
+comments: true
+---
+<div class="jumbotron">
+  <h1 class="display-4">Médocs <p class="lead">Application base de données des médicaments en Tunisie</p></h1>
+</div>
+<h2>A propos :</h2>
+<p>Médocs est une application qui permet au grand public et aux professionnels de santé d'accéder à des données sur les médicaments commercialisés ou ayant l'autorisation de mise sur le marché tunisien. C'est une application gratuite et son code source est ouvert.</p>
+<h2>Téléchargement :</h2>
+<div class="row my-4">
+  <div class="col-sm">
+    <div class="text-center">
+      <i class="fab fa-windows fa-10x"></i><hr>
+      <p><a href="https://github.com/drx-tn/medocs/releases/download/{{ page.medocs_version }}/medocs-{{ page.medocs_version }}_x64.exe"><i class="fas fa-download"></i> Windows 64 bits</a><br>
+      <a href="https://github.com/drx-tn/medocs/releases/download/{{ page.medocs_version }}/medocs-{{ page.medocs_version }}_x86.exe"><i class="fas fa-download"></i> Windows 32 bits</a></p>
+      <hr>
+    </div>
+  </div>
+  <div class="col-sm">
+    <div class="text-center">
+      <i class="fab fa-linux fa-10x"></i><hr>
+      <p><a href="https://github.com/drx-tn/medocs/archive/{{ page.medocs_version }}.tar.gz"><i class="fas fa-download"></i> Linux (Code source)</a><br>
+      <em>* Voir plus bas pour Ubuntu</em></p>
+      <hr>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm">
+    <div class="text-center">
+      <i class="fab fa-apple fa-10x"></i><hr>
+      <p><a href="https://github.com/drx-tn/medocs/releases/download/{{ page.medocs_version }}/medocs-{{ page.medocs_version }}.dmg"><i class="fas fa-download"></i> macOS X</a></p>
+      <hr>
+    </div>
+  </div>
+  <div class="col-sm">
+    <div class="text-center">
+      <i class="fab fa-android fa-10x"></i><hr>
+      <p><i class="fas fa-download"></i> Pas encore de version</p>
+      <hr>
+    </div>
+  </div>
+</div>
+<div class="my-4">
+<p>Pour installer médocs sous Ubuntu (Trusty / Xenial / Bionic / Artful / Cosmic) ajoutez le PPA <a href="https://launchpad.net/~drx.tn/+archive/ubuntu/ppa" target="_blank">ppa:drx.tn/ppa</a> à vos sources de mises-à-jour puis installez le paquet <em>medocs</em> avec ces commandes:</p>
+<p><pre style="overflow: auto; word-wrap: normal; white-space: pre;"><code>
+    sudo add-apt-repository ppa:drx.tn/ppa
+    sudo apt-get update
+    sudo apt-get install medocs
+
+</code></pre></p>
+</div>
