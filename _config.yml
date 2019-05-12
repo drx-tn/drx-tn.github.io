@@ -1,9 +1,12 @@
 title: DrX@TN
+author: DrX@TN
 email: 39054543+drx-tn@users.noreply.github.com
 description: >-
   Médecin à plein temps, développeur occasionnel et amateur de bonnes choses.
 baseurl: ""
-url: ""
+lang: fr_FR
+logo: /img/drx-tn.png
+url: "https://drx.tn"
 github_username:  drx-tn
 show_downloads: false
 paginate: 5
